@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RHUt07_pacienteController.cs" />
     <Compile Include="Controllers\RHUt09_personaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -528,6 +529,12 @@
     <Content Include="Views\RHUt09_persona\Details.cshtml" />
     <Content Include="Views\RHUt09_persona\Edit.cshtml" />
     <Content Include="Views\RHUt09_persona\Index.cshtml" />
+    <Content Include="Views\RHUt07_paciente\Create.cshtml" />
+    <Content Include="Views\RHUt07_paciente\Delete.cshtml" />
+    <Content Include="Views\RHUt07_paciente\Details.cshtml" />
+    <Content Include="Views\RHUt07_paciente\Edit.cshtml" />
+    <Content Include="Views\RHUt07_paciente\Index.cshtml" />
+    <Content Include="Views\RHUt09_persona\RHUt07_paciente\_Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
