@@ -160,4 +160,3 @@ C:\Users\roy\Source\Repos\AppMagicDentPatient\AppMagicDentPatient\bin\Microsoft.
 C:\Users\roy\Source\Repos\AppMagicDentPatient\AppMagicDentPatient\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\roy\Source\Repos\AppMagicDentPatient\AppMagicDentPatient\obj\Debug\AppMagicDentPatient.dll
 C:\Users\roy\Source\Repos\AppMagicDentPatient\AppMagicDentPatient\obj\Debug\AppMagicDentPatient.pdb
-C:\Users\roy\Source\Repos\AppMagicDentPatient\AppMagicDentPatient\obj\Debug\AppMagicDentPatient.csprojResolveAssemblyReference.cache

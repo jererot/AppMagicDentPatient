@@ -1,0 +1,682 @@
+﻿@model AppMagicDent.Models.RHUt09_persona
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+<div class="row">
+<!--CODIGO MODIFICAR-->
+<div class="col-lg-12">
+    <div class="card">
+        <!--*********************************************AQUÍ MODIFICAR CARD***************************-->
+        <h3 class="card-title"></h3>
+        <div class="" id="tabs">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                        <!--TABS-->
+                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tab1" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+                                    <span class="text">Inf. Básica</span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="next">
+                                <a href="#tab2" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">
+                                    <span class="text">Inf. Atensión</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab3" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+                                    <span class="text">Inf. Exámen Físico</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab4" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+                                    <span class="text">Inf. Función Vital</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab5" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+                                    <span class="text">Inf. Evolución</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab6" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+                                    <span class="text">Inf. Anammesis</span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">
+                                    <span class="text">Inf. Estudio completo</span>
+                                    <span class="caret">
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                    <li>
+                                        <a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">
+                                            <span>General</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">
+                                            <span>Detallado</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tab8" role="tab" id="samsa-tab" data-toggle="tab" aria-controls="samsa">
+                                    <span class="text">Inf. Diagnóstico</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                        <div id="myTabContent" class="tab-content">
+                            <!--INFOBASICA-->
+                            <div role="tabpanel" class="tab-pane fade in active" id="tab1" aria-labelledby="home-tab">
+                                
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+                                        <!---h4>RHUt09_persona</h4-->
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <!-- **********PARTE 1******** -->
+                                                <!---h3 class="card-title">*</!--h3-->
+                                                <div class="card-body">
+
+                                                    <!--NAME-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.nombrePersona, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.nombrePersona, new { htmlAttributes = new { @class = "form-control" , @placeholder = "Ingrese nombre completo" } })
+                                                            @Html.ValidationMessageFor(model => model.nombrePersona, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--SURNAME1-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.apellidoPaterno, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.apellidoPaterno, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.apellidoPaterno, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--SURNAME2-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.apellidoMaterno, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.apellidoMaterno, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.apellidoMaterno, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--DOC-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.idTipoDocIdentidad, "idTipoDocIdentidad", htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.DropDownList("idTipoDocIdentidad", null, htmlAttributes: new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(model => model.idTipoDocIdentidad, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--NUMBERDOC-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.numDocIdentidad, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.numDocIdentidad, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.numDocIdentidad, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--REASONSOC-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.razonSocial, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.razonSocial, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.razonSocial, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--MARITALSTATUS-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.idEstadoCivil, "idEstadoCivil", htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.DropDownList("idEstadoCivil", null, htmlAttributes: new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(model => model.idEstadoCivil, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--*************RECORD-2*************-->
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <h3 class="card-title">Básica 2</h3>
+                                                <div class="card-body">
+                                                    <!--NUMBERTELF-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.numTelefonico01, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.numTelefonico01, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.numTelefonico01, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--DATEBIRTHDAY-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.fecNacimiento, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.fecNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.fecNacimiento, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--DISTRITO-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.idDistrito, "idDistrito", htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.DropDownList("idDistrito", null, htmlAttributes: new { @class = "form-control" })
+                                                            @Html.ValidationMessageFor(model => model.idDistrito, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--GENRE-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.sexo, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.sexo, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--EMAIL-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.email01, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.email01, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.email01, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                    <!--ADDRESS-->
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.direccion01, htmlAttributes: new { @class = "control-label col-md-3" })
+                                                        <div class="col-md-8">
+                                                            @Html.EditorFor(model => model.direccion01, new { htmlAttributes = new { @class = "form-control" } })
+                                                            @Html.ValidationMessageFor(model => model.direccion01, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- **********STARTCONFIRMATION********** -->
+                                        <div class="col-md-12" style="text-align: center;">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <form class="form-inline">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="col-md-12">
+                                                                    <button type="submit" value="" class="btn btn-primary icon-btn">
+                                                                        <i class="fa fa-fw fa-lg fa-check-circle">
+                                                                        </i>Registrar
+                                                                    </button>&nbsp;&nbsp;&nbsp;
+                                                                </div>
+                                                                <a class="btn btn-default icon-btn" href="#">
+                                                                    <i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Registrar" class="btn btn-default">
+                                                
+                                            </div>
+                                        </div>
+                     
+                                    </div>                              
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--INFATENCIONL-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab2" aria-labelledby="profile-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfAtension">
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--MEDICODETURNO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Médico de turno</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <select class="form-control" id="select" disabled>
+                                                                <option value="">-- Seleccionar --</option>
+                                                                <option value="1" selected>Dr. Pedro Lorenzo Cardenas</option>
+                                                                <option value="3">Dr. Jose Anibal León </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--NOTA-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Nota</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--INFEXAMFISICO-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab3" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfExaMedico">
+                                                <!--DESCIRPCIONEXAMENMEDICO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Resgistro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--INFOFUNCIONVITAL-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab4" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfFuncionVital">
+                                                <!--SISTOLE-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Sistole</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--DiASTOLE-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Diastole</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--PULSACIÓN-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Pulsación</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--RITMORESPIRATORIO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Ritmo Respiratorio</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--TEMPERATURA-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Temperatura</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--ALTURA-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Atura</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--PESO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Peso</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--IMC-->
+                                                <div class="form-group">
+                                                    <label class="control-label">IMC</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--INFOEVOLUCION-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab5" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfEvolucion">
+                                                <!--DESCRIPCCION-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <input class="form-control" type="text" placeholder="" disabled>
+
+
+                                                </div>
+                                                <div class="form-group" style="">
+                                                    <label class="control-label col-lg-12">Estado</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <div class="animated-radio-button">
+                                                                <!--PESIMO-->
+                                                                <label>
+                                                                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option1"><span class="label-text">Pésimo</span>
+                                                                </label>
+                                                                <label for="" style="width: 30px;"></label>
+                                                                <!--MALO-->
+                                                                <label>
+                                                                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option2"><span class="label-text">Malo</span>
+                                                                </label>
+                                                                <label for="" style="width: 30px;"></label>
+                                                                <!--REGULAR-->
+                                                                <label>
+                                                                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option2"><span class="label-text">Regular</span>
+                                                                </label>
+                                                                <label for="" style="width: 30px;"></label>
+                                                                <!--BUENO-->
+                                                                <label>
+                                                                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option2" checked="checked"><span class="label-text">Bueno</span>
+                                                                </label>
+                                                                <label for="" style="width: 30px;"></label>
+                                                                <!--EXCELENTE-->
+                                                                <label>
+                                                                    <input id="optionsRadios1" type="radio" name="optionsRadios" value="option2"><span class="label-text">Excelente</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
+                            </div>
+
+                            <!--INFOANAMMESIS-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfAnammesis">
+                                                <!--DESCIRPCIONEXAMENMEDICO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--INFOARCHIVOCOMPL1-->
+                            <div role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfEstCom1">
+                                                <!--DESCIRPCIONEXAMENMEDICO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--INFOARCHIVOCOMPL2-->
+                            <div role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfEstCom2">
+                                                <!--DESCIRPCIONEXAMENMEDICO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--PATHARCHIVO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">PATH</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--DIAGNOSTICO-->
+                            <div role="tabpanel" class="tab-pane fade" id="tab8" aria-labelledby="dropdown1-tab">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <div class="card">
+                                            <form id="InfAnammesis">
+                                                <!--DESCIRPCIONEXAMENMEDICO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Descripción</label>
+                                                    <textarea class="form-control" rows="4" placeholder="Ingresar nota" disabled></textarea>
+                                                </div>
+                                                <!--FECHAREGISTRO-->
+                                                <div class="form-group">
+                                                    <label class="control-label">Fecha de Registro</label>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" disabled>
+                                                        </div>
+                                                        <div class="col-md-2" style="text-align: right;">
+                                                            <a class="btn btn-success icon-btn" href="create.html">
+                                                                <i class="fa fa-fw fa-lg fa-search">
+                                                                </i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--***FINCITA***-->
+        <!-- **********STARTCONFIRMATION********** -->
+        <div class="card" style="text-align: center;">
+            <div class="card-body">
+                <form class="form-inline">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-warning icon-btn" type="button">
+                                <i class="fa fa-fw fa-lg fa-edit">
+                                </i>Editar
+                            </button>&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-default icon-btn" href="index.html">
+                                <i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- **********ENDCONFIRMATION********** -->
+        <!--*******************************************FIN***********************************-->
+
+
+    </div>
+</div>
+</div>
+
+        
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+@*
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
+*@
